@@ -17,3 +17,10 @@ ja:
     create:
       success: 'ユーザー登録が完了しました'
       error: 'ユーザー登録に失敗しました'
+
+  user_sessions:
+    create:
+      success: 'ログインしました'
+      error: 'ログインに失敗しました'
+    destroy:
+      success: 'ログアウトしました'
