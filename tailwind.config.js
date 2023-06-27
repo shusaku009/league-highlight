@@ -10,5 +10,10 @@ module.exports = {
   ],
   daisyui: {
     themes: ["bumblebee"]
+  },
+  purge: {
+    options: {
+      safelist: ['alert-success', 'alert-error']
+    }
   }
 }
