@@ -14,6 +14,6 @@ class UserSessionsController < ApplicationController
 
   def destroy
     logout
-    redirect_to login_path, success: t('.success')
+    redirect_to login_path, success: t('.success'), stauts: :see_other
   end
 end
