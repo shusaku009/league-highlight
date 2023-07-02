@@ -8,4 +8,5 @@
 #  updated_at :datetime         not null
 #
 class LeagueCategory < ApplicationRecord
+  has_many :teams, dependent: :destroy
 end
