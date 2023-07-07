@@ -60,8 +60,6 @@ gem 'rails-i18n'
 # youtube api
 gem 'google-api-client'
 
-gem 'seed-fu'
-
 group :development, :test do
   gem 'annotate'
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
