@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'leagues/index', to: 'leagues#index'
+  get 'teams/index', to: 'teams#index'
+  get 'teams/new'
+  get 'teams/destroy'
+  get 'teams/update'
+  get 'videos/index', to: 'videos#index'
   get '/health_check', to: 'health_checks#show'
   root to: 'samples#index'
   get '/signup', to: 'users#new'

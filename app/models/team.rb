@@ -8,5 +8,7 @@
 #  updated_at :datetime         not null
 #
 class Team < ApplicationRecord
-  has_many :videos
+  has_many :videos, dependent: :destroy
+
+  validates :name, presence: true
 end
