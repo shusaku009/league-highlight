@@ -1,6 +1,6 @@
 require 'google/apis/youtube_v3'
 
-YOUTUBE_API_KEY = Rails.application.credentials.google[:youtube_api_key]
+YOUTUBE_API_KEY = 'Rails.application.credentials.google[:youtube_api_key]'
 
 Google::Apis::ClientOptions.default.application_name = 'MyApp'
 Google::Apis::ClientOptions.default.application_version = '1.0'
