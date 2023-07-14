@@ -1,5 +1,7 @@
 name: Test
 on: [push]
+env:
+  YOUTUBE_API_KEY: ${{secrets.YOUTUBE_API_KEY}}
 jobs:
   rspec:
     runs-on: ubuntu-latest
@@ -10,7 +12,6 @@ jobs:
           - 3306:3306
         env:
           TZ: "Asia/Tokyo"
-          YOUTUBE_API_KEY: ${{secrets.YOUTUBE_API_KEY}}
           MYSQL_ROOT_PASSWORD: mysql
         options: --health-cmd="mysqladmin ping -pmysql" --health-interval=5s --health-timeout=2s --health-retries=3
     container:
