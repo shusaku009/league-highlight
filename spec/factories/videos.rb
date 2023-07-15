@@ -3,6 +3,7 @@
 # Table name: videos
 #
 #  id            :bigint           not null, primary key
+#  published_at  :datetime         not null
 #  thumbnail_url :string(255)      not null
 #  title         :string(255)      not null
 #  created_at    :datetime         not null
