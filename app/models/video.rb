@@ -26,6 +26,10 @@ class Video < ApplicationRecord
   validates :thumbnail_url, presence: true
   # rubocop:disable Metrics/MethodLength
   def self.fetch_and_save_videos(after: 1.year.ago, before: Time.zone.now)
+    youtube_service = Google::Apis::YoutubeV3::YouTubeService.new
+    youtube_api_key = Rails.application.credentials.google[:youtube_api_key]
+    youtube_service.key = youtube_api_key
+
     Team.find_each do |team|
       # YouTubeの動画検索を行う
       opt = {
