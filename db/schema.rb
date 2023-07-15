@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_26_074733) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_07_080508) do
+  create_table "teams", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", null: false
     t.string "crypted_password"
@@ -22,4 +28,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_26_074733) do
     t.index ["user_name"], name: "index_users_on_user_name", unique: true
   end
 
+  create_table "videos", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "team_id", null: false
+    t.string "title", null: false
+    t.string "video_id", null: false
+    t.string "thumbnail_url", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "published_at", null: false
+    t.index ["team_id"], name: "index_videos_on_team_id"
+  end
+
+  add_foreign_key "videos", "teams"
 end

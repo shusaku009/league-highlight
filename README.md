@@ -1,24 +1,71 @@
-# README
+# **サービス名**
+League Highlight
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# **サービス概要**
+自分が好きなサッカーチームのハイライトをまとめて視聴できるサービスです。
+ユーザー登録をすればハイライトをお気に入りに登録することができ、気軽に視聴することができるようになります。
 
-Things you may want to cover:
+### **メインのターゲットユーザー**
+- サッカーが好きだが、なかなか全試合を見る時間がない人。
+- 試合のハイライトでも十分に楽しめる人。
+- 好きなチームのハイライトを気軽に楽しみたい。
 
-* Ruby version
+### **ユーザーが抱える課題**
+- youtubeにハイライトの動画が上がっているが、様々なチームやリーグが出てくるので探す時間がかかる。
+- チームやハイライトをお気に入りとして管理できるようにしたい。
 
-* System dependencies
+### **解決方法**
+- チームやリーグごとにハイライト動画をまとめることで、自分が見たいハイライトを検索しやすくする。
+- 好きなチーム、ハイライトをお気に入りとして登録することでいつでもマイページから確認できるようにする。
 
-* Configuration
+### **実装予定の機能**
+1. ユーザー登録・編集・削除機能
+ googleアカウントを使用してのログイン機能
 
-* Database creation
+2. ハイライト動画の検索・詳細表示機能
 
-* Database initialization
+3. チームカテゴリー毎の動画検索機能
 
-* How to run the test suite
+4. 動画のお気に入り登録・削除機能
 
-* Services (job queues, cache servers, search engines, etc.)
+5. 動画のコメント機能
 
-* Deployment instructions
+6. 動画のいいね機能
 
-* ...
+1〜3はユーザー登録不要
+
+3〜6はユーザー登録後に利用可能
+
+### **YouTube DataAPIの通信について**
+YouTube DataAPIから動画を取得する際には、Search: listメソッドを使い検索キーワードを「チーム名 + ハイライト」として関連の動画を取得できるようにする。
+動画情報の更新については週に１回、YouTube APIと通信を行い最新の情報をDBに保存をするように実装をする。
+
+## 使用技術
+バックエンド
+- Ruby 3.2.2
+- Ruby on Rails 7.0.4
+
+フロントエンド
+- JavaScript
+- Tailwind CSS
+- daisyUI
+
+データベース
+- MySQL
+
+コンテナ管理
+- Docker
+
+CI
+- GitHub Actions
+
+コード解析
+- RuboCop
+- Erblint
+
+テスト
+- Rspec
+
+### **なぜこのサービスを作りたいのか？**
+私自身、サッカーが好きですがフルで試合を見ることが少なく、基本的にハイライトを見て楽しんでいます。
+好きなチームのハイライトをまとめて視聴できるような環境があれば、もっと快適に楽しむことができるのではないかと考え、このサービスを開発しようと思いました。
