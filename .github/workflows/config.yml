@@ -16,7 +16,6 @@ jobs:
       image: ruby:3.2.2
     env:
       RAILS_ENV: test
-      YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
     steps:
       - uses: actions/checkout@v2
       - name: Set up yarn and node
