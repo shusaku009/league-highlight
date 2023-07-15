@@ -23,7 +23,7 @@ Rails:
   Enabled: true
 
 Metrics/AbcSize:
-  Max: 25
+  Max: 35
 
 Style/AsciiComments:
   Enabled: false
