@@ -47,6 +47,8 @@ jobs:
       - name: yarn install
         run: yarn install
       - name: setup db schema
+        env:
+          youtube_api_key: ${{ secrets.YOUTUBE_API_KEY }}
         run: |
           bundle exec rails db:create db:schema:load --trace
       - name: Precompile Assets
