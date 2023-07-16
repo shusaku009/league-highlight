@@ -19,6 +19,8 @@
 #
 #  fk_rails_...  (team_id => teams.id)
 #
+require 'google/apis/youtube_v3'
+
 class Video < ApplicationRecord
   belongs_to :team
   validates :title, presence: true
@@ -42,7 +44,7 @@ class Video < ApplicationRecord
         published_after: after.iso8601,
         published_before: before.iso8601
       }
-      response = YoutubeService.list_searches(:snippet, **opt)
+      response = youtube_service.list_searches(:snippet, **opt)
 
       # 動画データを保存する
       response.items.each do |item|
