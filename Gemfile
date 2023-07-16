@@ -60,6 +60,9 @@ gem 'rails-i18n'
 # youtube api
 gem 'google-api-client'
 
+# 定時処理
+gem 'whenever', require: false
+
 group :development, :test do
   gem 'annotate'
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
