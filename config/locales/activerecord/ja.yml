@@ -8,6 +8,8 @@ ja:
         password: 'パスワード'
         password_confirmation: 'パスワード確認'
         user_name: 'ユーザー名'
+      team:
+        name: 'チーム名'
 
   attributes:
     created_at: '作成日時'

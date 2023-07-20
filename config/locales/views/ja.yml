@@ -1,4 +1,16 @@
 ja:
+  defaults:
+    login: 'ログイン'
+    register: '新規登録'
+    logout: 'ログアウト'
+    submit: '送信'
+    update: '更新'
+    edit: '編集'
+    mypage: 'マイページ'
+    terms_of_use: "利用規約"
+    privacy_policy: "プライバシーポリシー"
+    contact: "お問い合わせ"
+
   users:
     create:
       success: 'ユーザー登録が完了しました'
@@ -14,3 +26,9 @@ ja:
   teams:
     new:
       name: 'チーム名'
+    create:
+      success: 'チームの登録が完了しました'
+      error: 'チームの登録に失敗しました'
+    update:
+      success: 'チームの更新が完了しました'
+      error: 'チームの更新に失敗しました'

@@ -1,0 +1,27 @@
+<div class="overflow-x-auto">
+  <%= link_to '一覧', teams_path, class: 'btn btn-primary' %>
+  <table class="table">
+    <!-- head -->
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>チーム名</th>
+        <th>作成日時</th>
+        <th>更新日時</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- row 1 -->
+      <tr>
+        <th><%= @team.id %></th>
+        <td><%= @team.name %></td>
+        <td><%= @team.created_at %></td>
+        <td><%= @team.updated_at %></td>
+        <td><%= link_to '編集', edit_team_path(@team), class: 'btn btn-success m-2' %></td>
+        <td><%= link_to '削除', team_path(@team), data: { turbo_method: :delete, turbo_confirm: "テーム「#{@team.name}」を削除します。よろしいですか？" }, class: 'btn btn-error m-2' %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

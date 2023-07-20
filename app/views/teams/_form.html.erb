@@ -1,0 +1,8 @@
+<%= link_to '一覧', teams_path, class: 'btn btn-primary' %>
+<%= form_with model: @team do |form| %>
+  <div class="my-3">
+    <%= form.label :name, class: 'block mb-4' %>
+    <%= form.text_field :name, class: 'block mb-4 input input-bordered w-full max-w-xs' %>
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

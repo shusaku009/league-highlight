@@ -1,7 +1,9 @@
 <div class="p-10">
+  <h1 class="my-2">チーム一覧</h1>
+  <%= link_to '新規登録', new_team_path, class: 'my-5 btn btn-success' %>
   <div class="sm:dropdown md:grid grid-cols-4 gap-5">
     <% @teams.each do |team| %>
-      <button class="btn btn-primary"></i><%= team.name %></button>
+      <button class="btn btn-primary"><%= link_to team.name.to_s, team_path(team) %></button>
     <% end %>
   </div>
 </div>
