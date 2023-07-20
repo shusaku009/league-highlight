@@ -9,6 +9,6 @@
 #
 FactoryBot.define do
   factory :team do
-    league_category { nil }
+    name { 'テストチーム' }
   end
 end

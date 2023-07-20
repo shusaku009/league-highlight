@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  get 'leagues/index', to: 'leagues#index'
-  get 'teams/index', to: 'teams#index'
-  get 'teams/new'
-  get 'teams/destroy'
-  get 'teams/update'
-  get 'videos/index', to: 'videos#index'
   get '/health_check', to: 'health_checks#show'
   root to: 'samples#index'
   get '/signup', to: 'users#new'
@@ -12,4 +6,7 @@ Rails.application.routes.draw do
   get '/login', to: 'user_sessions#new'
   post '/login', to: 'user_sessions#create'
   delete '/logout', to: 'user_sessions#destroy'
+
+  resources :videos
+  resources :teams
 end
