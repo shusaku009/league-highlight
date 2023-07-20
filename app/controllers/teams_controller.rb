@@ -38,7 +38,7 @@ class TeamsController < ApplicationController
   def destroy
     @team = Team.find(params[:id])
     @team.destroy
-    redirect_to teams_url, notice: "チーム「#{@team.name}」を削除しました。"
+    redirect_to teams_url, error: "チーム「#{@team.name}」を削除しました。"
   end
 
   private
