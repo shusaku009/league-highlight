@@ -88,5 +88,4 @@ end
 group :test do
   gem 'capybara'
   gem 'selenium-webdriver', '4.9.0'
-  gem 'webdrivers'
 end
