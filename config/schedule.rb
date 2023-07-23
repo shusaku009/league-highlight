@@ -1,5 +1,5 @@
 ENV.each { |k, v| env(k, v) }
-set :output, error: 'log/crontab_error.log', standard: 'log/crontab.log' # 
+set :output, error: 'log/crontab_error.log', standard: 'log/crontab.log'
 set :environment, :development
 
 # 毎週日曜日、月曜日、火曜日の朝８時に、YouTube動画を更新
