@@ -63,7 +63,8 @@ gem 'google-api-client'
 # 定時処理
 gem 'whenever', require: false
 
-gem 'kaminari'
+# ページネーション
+gem 'pagy'
 
 group :development, :test do
   gem 'annotate'
