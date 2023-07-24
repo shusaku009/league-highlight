@@ -1,6 +1,6 @@
 class VideosController < ApplicationController
   def index
-    @videos = Video.all
+    @pagy, @videos = pagy(Video.all, items: 24)
   end
 
   def show

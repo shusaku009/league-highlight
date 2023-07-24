@@ -1,14 +1,17 @@
 <div class="sm:p-4 md:p-8 lg:p-12">
   <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     <% @videos.each do |video| %>
-      <div class="bg-white overflow-hidden">
+      <div class="bg-white overflow-hidden rounded-lg">
         <div class="p-4 relative" style="padding-bottom: 56.25%;">
           <div class="absolute inset-0  object-cover object-center w-full"><%= link_to image_tag(video.thumbnail_url, alt: video.title, class: 'w-full h-full hover:opacity-75'), video_path(video) %></div>
         </div>
-        <div class="bg-gray-100 shadow-lg h-24 px-4 rounded-lg">
+        <div class="bg-gray-100 shadow-lg h-24 px-4">
             <p class="text-gray-800py-2"><%= video.title %></p>
         </div>
       </div>
     <% end %>
+  </div>
+  <div class="flex justify-center my-6">
+    <%== pagy_nav(@pagy) %>
   </div>
 </div>
