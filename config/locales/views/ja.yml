@@ -32,3 +32,11 @@ ja:
     update:
       success: 'チームの更新が完了しました'
       error: 'チームの更新に失敗しました'
+
+  pagy:
+    info:
+      single_page:
+        zero: "%{total}件中%{from}件表示"
+        one: "全1件表示"
+        other: "全%{count}件中%{from}-%{to}件表示"
+      multiple_pages: "全%{count}件中%{from}-%{to}件表示（全%{pages}ページ）"
