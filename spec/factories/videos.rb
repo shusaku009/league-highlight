@@ -21,6 +21,10 @@
 #
 FactoryBot.define do
   factory :video do
-    team { nil }
+    title { '【プレミアリーグ CLASSIC MATCH】10/11 マンチェスター・U vs マンチェスター・C ハイライト' }
+    video_id { 'cfC1qQbuUA8' }
+    published_at { DateTime.now }
+    thumbnail_url { 'https://i.ytimg.com/vi/cfC1qQbuUA8/hqdefault.jpg' }
+    team
   end
 end

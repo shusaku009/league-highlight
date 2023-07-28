@@ -21,6 +21,6 @@
 #
 FactoryBot.define do
   factory :comment do
-    
+    body { 'テストコメント' }
   end
 end
