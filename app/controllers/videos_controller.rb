@@ -5,5 +5,7 @@ class VideosController < ApplicationController
 
   def show
     @video = Video.find(params[:id])
+    @comments = @video.comments.order(created_at: :desc)
+    @comment = Comment.new
   end
 end
