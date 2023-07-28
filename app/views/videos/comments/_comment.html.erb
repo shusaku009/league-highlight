@@ -1,0 +1,35 @@
+<%= turbo_frame_tag dom_id comment do %>
+  <div class="my-2">
+    <div class="w-full p-5 flex justify-between">
+      <div class="flex">
+        <div>
+          <%= image_tag 'avatar', class: 'rounded-full w-10 h-10' %>
+        </div>
+        <div class="pl-4">
+          <div class="font-semibold"><%= comment.user.user_name%></div>
+          <%= simple_format(comment.body) %>
+        </div>
+      </div>
+      <div class="pt-5">
+        <small><%= l comment.created_at, format: :long %></small>
+        <% if current_user && current_user.owner?(comment) %>
+          <div class="text-end">
+            <span class="me-2">
+              <%= link_to edit_video_comment_path(comment.video, comment), class: 'btn btn-floating btn-success btn-sm btn-edit' do %>
+                <i class="far fa-edit"></i>
+              <% end %>
+            </span>
+              <span>
+              <%= link_to video_comment_path(comment.video, comment), class: 'btn btn-error btn-sm btn-delete', data: { turbo_method: :delete, turbo_confirm: '削除します' } do %>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
+            </span>
+          </div>
+          
+        <% end %>
+      </div>
+    </div>
+    <hr>
+  </div>
+<% end %>
+

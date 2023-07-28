@@ -1,0 +1,8 @@
+<% if @comment.valid? %>
+  <%= turbo_stream.prepend "comments", @comment %>
+<% end %>
+<%= turbo_stream.replace(
+      'form_comment',
+      partial: 'form',
+      locals: { video: @comment.video, comment: @comment.valid? ? Comment.new : @comment }
+    ) %>

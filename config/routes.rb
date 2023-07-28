@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   post '/login', to: 'user_sessions#create'
   delete '/logout', to: 'user_sessions#destroy'
 
-  resources :videos
+  resources :videos do
+    resources :comments, module: :videos
+  end
   resources :teams
 end
