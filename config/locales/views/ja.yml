@@ -11,6 +11,9 @@ ja:
     privacy_policy: "プライバシーポリシー"
     contact: "お問い合わせ"
 
+  application:
+    require_login: "ログインが必要です"
+
   users:
     create:
       success: 'ユーザー登録が完了しました'

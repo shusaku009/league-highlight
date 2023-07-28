@@ -5,9 +5,9 @@ class ApplicationController < ActionController::Base
   private
 
   def require_login
-    unless logged_in?
-      flash[:error] = "ログインが必要です"
-      redirect_to login_url
-    end
+    return if logged_in?
+
+    flash[:error] = t('application.require_login')
+    redirect_to login_url
   end
 end
