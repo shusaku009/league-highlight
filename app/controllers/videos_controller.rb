@@ -5,7 +5,8 @@ class VideosController < ApplicationController
 
   def show
     @video = Video.find(params[:id])
-    @comments = @video.comments.order(created_at: :desc)
+    # 動画に対するコメントを表示
+    @pagy, @comments = pagy(@video.comments.order(created_at: :desc), items: 15)
     @comment = Comment.new
   end
 end
