@@ -43,4 +43,13 @@ RSpec.describe "コメント", type: :system do
       expect(page).not_to have_content comment.body
     end
   end
+
+  describe 'ページネーション' do
+    let!(:comments) { create_list(:comment, 16, video: video, user: user) }
+  
+    it '16件目のコメントは1ページ目に表示されていないこと' do
+      visit video_path(video)
+      expect(page).not_to have_css("#comment_#{comments.first.id}")
+    end
+  end
 end
