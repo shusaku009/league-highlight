@@ -18,6 +18,7 @@
 #
 class User < ApplicationRecord
   authenticates_with_sorcery!
+  has_many :comments, dependent: :destroy
 
   validates :user_name, uniqueness: true, presence: true
   validates :email, uniqueness: true, presence: true
@@ -27,4 +28,8 @@ class User < ApplicationRecord
 
   # 一般ユーザーか管理者の判別
   enum role: { general: 0, admin: 1 }
+
+  def owner?(object)
+    object.user_id == id
+  end
 end

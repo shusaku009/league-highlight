@@ -1,0 +1,7 @@
+<%= turbo_frame_tag dom_id @comment do %>
+  <%= render 'form', video: @comment.video, comment: @comment %>
+  <div class="">
+    <%= link_to 'キャンセル', [@comment.video, @comment], class: 'btn btn-link btn-sm' %>
+  </div>
+  <hr>
+<% end %>

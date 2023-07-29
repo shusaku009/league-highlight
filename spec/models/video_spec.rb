@@ -22,5 +22,12 @@
 require 'rails_helper'
 
 RSpec.describe Video, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'バリデーションテスト' do
+    let(:video) { FactoryBot.create(:video) }
+
+    it "動画保存に必要な情報がある場合" do
+      video = FactoryBot.build(:video)
+      expect(video).to be_valid
+    end
+  end
 end
