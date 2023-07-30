@@ -21,6 +21,8 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :like_videos, through: :likes, source: :video
+  has_many :bookmarks, dependent: :destroy
+  has_many :bookmark_videos, through: :bookmarks, source: :video
 
   validates :user_name, uniqueness: true, presence: true
   validates :email, uniqueness: true, presence: true
@@ -45,5 +47,17 @@ class User < ApplicationRecord
 
   def like?(video)
     like_videos.include?(video)
+  end
+
+  def bookmark(video)
+    bookmark_videos << video
+  end
+
+  def unbookmark(video)
+    bookmark_videos.destroy(video)
+  end
+
+  def bookmark?(video)
+    bookmark_videos.include?(video)
   end
 end

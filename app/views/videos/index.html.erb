@@ -1,4 +1,4 @@
-<div class="sm:p-4 md:p-8 lg:p-12">
+<div class="p-4 md:p-8 lg:p-12">
   <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     <% @videos.each do |video| %>
       <div class="bg-white overflow-hidden rounded-lg">
@@ -8,8 +8,11 @@
         <div class="bg-gray-100 shadow-lg h-24 px-4">
           <p class="text-sm text-gray-800 py-2"><%= video.title %></p>
           <% if logged_in? %>
-            <div class="flex justify-end text-red-400 pb-2">
+            <div class="flex flex-row-reverse text-red-400 md:text-lg">
               <%= render 'videos/likes/likes', video: %>
+              <div class="pr-4 text-primary text-center">
+                <%= render 'videos/bookmarks/bookmarks', video: %>
+              </div>
             </div>
           <% end %>
         </div>
