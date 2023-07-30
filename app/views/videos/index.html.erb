@@ -8,7 +8,7 @@
         <div class="bg-gray-100 shadow-lg h-24 px-4">
           <p class="text-sm text-gray-800 py-2"><%= video.title %></p>
           <% if logged_in? %>
-            <div class="flex justify-end">
+            <div class="flex justify-end text-red-400 pb-2">
               <%= render 'videos/likes/likes', video: %>
             </div>
           <% end %>
