@@ -2,6 +2,13 @@
   <div class="w-full">
     <p class="md:text-lg"><%= @video.title %></p>
     <iframe class="mb-3 w-full aspect-video" src="https://www.youtube.com/embed/<%= @video.video_id %>" frameborder="1"></iframe>
+    <div class="flex">
+      <% if logged_in? %>
+        <div class="pl-1 pr-4 text-xl md:text-4xl text-red-400">
+          <%= render 'videos/likes/likes', video: @video %>
+        </div>
+      <% end %>
+    </div>
   </div>
   <div class="comment-form">
     <%= render 'videos/comments/form', video: @video, comment: @comment %>

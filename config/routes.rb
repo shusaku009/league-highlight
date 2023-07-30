@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :videos do
     resources :comments, module: :videos
+    resource :like, only: %i[create destroy], module: :videos
   end
   resources :teams
 end

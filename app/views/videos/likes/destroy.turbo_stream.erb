@@ -1,0 +1,6 @@
+<%= turbo_stream.replace(
+      dom_id(@video, 'like'),
+      partial: 'likes',
+      locals: { video: @video }
+    )
+%>

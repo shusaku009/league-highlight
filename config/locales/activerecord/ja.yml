@@ -2,6 +2,7 @@ ja:
   activerecord:
     models:
       user: 'ユーザー'
+      comment: 'コメント'
     attributes:
       user:
         email: 'メールアドレス'
@@ -10,6 +11,8 @@ ja:
         user_name: 'ユーザー名'
       team:
         name: 'チーム名'
+      comment:
+        body: 'コメント'
 
   attributes:
     created_at: '作成日時'
