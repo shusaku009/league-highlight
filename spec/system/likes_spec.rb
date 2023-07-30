@@ -13,15 +13,17 @@ RSpec.describe "Likes", type: :system do
       expect {
         within "#like_video_#{video.id}" do
           find('.btn-like').click
+          expect(page).to have_selector('.btn-unlike')
         end
-        sleep 0.1
+        # sleep 0.1
       }.to change { Like.count }.by(1)
 
       expect {
         within "#like_video_#{video.id}" do
           find('.btn-unlike').click
+          expect(page).to have_selector('.btn-like') 
         end
-        sleep 0.1
+        # sleep 0.1
       }.to change { Like.count }.by(-1)
     end
   end
@@ -33,16 +35,18 @@ RSpec.describe "Likes", type: :system do
       expect {
         within "#like_video_#{video.id}" do
           find('.btn-like').click
+          expect(page).to have_selector('.btn-unlike')
         end
-        sleep 0.1
+        # sleep 0.1
       }.to change { Like.count }.by(1)
 
       expect {
         within "#like_video_#{video.id}" do
           find('.btn-unlike').click
         end
-        sleep 0.1
+        # sleep 0.1
       }.to change { Like.count }.by(-1)
+      expect(page).to have_selector('.btn-like')
     end
   end
 end
