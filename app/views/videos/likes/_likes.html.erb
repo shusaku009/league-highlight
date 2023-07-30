@@ -1,0 +1,7 @@
+<%= turbo_frame_tag dom_id(video, 'like') do %>
+  <% if current_user.like?(video) %>
+    <%= render 'videos/likes/unlike', video: %>
+  <% else %>
+    <%= render 'videos/likes/like', video: %>
+  <% end %>
+<% end %>

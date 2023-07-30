@@ -19,6 +19,8 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
   has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :like_videos, through: :likes, source: :video
 
   validates :user_name, uniqueness: true, presence: true
   validates :email, uniqueness: true, presence: true
@@ -31,5 +33,17 @@ class User < ApplicationRecord
 
   def owner?(object)
     object.user_id == id
+  end
+
+  def like(video)
+    like_videos << video
+  end
+
+  def unlike(video)
+    like_videos.destroy(video)
+  end
+
+  def like?(video)
+    like_videos.include?(video)
   end
 end

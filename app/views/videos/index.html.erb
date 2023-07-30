@@ -6,7 +6,12 @@
           <div class="absolute inset-0  object-cover object-center w-full"><%= link_to image_tag(video.thumbnail_url, alt: video.title, class: 'w-full h-full hover:opacity-75'), video_path(video) %></div>
         </div>
         <div class="bg-gray-100 shadow-lg h-24 px-4">
-            <p class="text-gray-800py-2"><%= video.title %></p>
+          <p class="text-sm text-gray-800 py-2"><%= video.title %></p>
+          <% if logged_in? %>
+            <div class="flex justify-end">
+              <%= render 'videos/likes/likes', video: %>
+            </div>
+          <% end %>
         </div>
       </div>
     <% end %>
