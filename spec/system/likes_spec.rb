@@ -43,10 +43,10 @@ RSpec.describe "Likes", type: :system do
       expect {
         within "#like_video_#{video.id}" do
           find('.btn-unlike').click
+          expect(page).to have_selector('.btn-like')
         end
         # sleep 0.1
       }.to change { Like.count }.by(-1)
-      expect(page).to have_selector('.btn-like')
     end
   end
 end
