@@ -21,6 +21,7 @@
 #
 FactoryBot.define do
   factory :bookmark do
-    
+    video { nil }
+    user { nil }
   end
 end
