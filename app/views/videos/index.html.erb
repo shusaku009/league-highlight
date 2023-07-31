@@ -1,15 +1,18 @@
-<div class="sm:p-4 md:p-8 lg:p-12">
+<div class="p-4 md:p-8 lg:p-12 z-0">
   <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     <% @videos.each do |video| %>
       <div class="bg-white overflow-hidden rounded-lg">
         <div class="p-4 relative" style="padding-bottom: 56.25%;">
-          <div class="absolute inset-0  object-cover object-center w-full"><%= link_to image_tag(video.thumbnail_url, alt: video.title, class: 'w-full h-full hover:opacity-75'), video_path(video) %></div>
+          <div class="absolute inset-0 object-cover object-center w-full"><%= link_to image_tag(video.thumbnail_url, alt: video.title, class: 'w-full h-full hover:opacity-75'), video_path(video) %></div>
         </div>
-        <div class="bg-gray-100 shadow-lg h-24 px-4">
-          <p class="text-sm text-gray-800 py-2"><%= video.title %></p>
+        <div class="bg-gray-100 shadow-lg h-20 px-4">
+          <p class="text-sm text-gray-800 pt-2 pb-0 line-clamp-2"><%= video.title %></p>
           <% if logged_in? %>
-            <div class="flex justify-end text-red-400 pb-2">
+            <div class="flex flex-row-reverse text-red-400 md:text-lg pt-1">
               <%= render 'videos/likes/likes', video: %>
+              <div class="pr-4 text-primary text-center">
+                <%= render 'videos/bookmarks/bookmarks', video: %>
+              </div>
             </div>
           <% end %>
         </div>

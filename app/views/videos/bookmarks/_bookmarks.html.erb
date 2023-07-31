@@ -1,0 +1,7 @@
+<%= turbo_frame_tag dom_id(video, 'bookmark') do %>
+  <% if current_user.bookmark?(video) %>
+    <%= render 'videos/bookmarks/unbookmark', video: %>
+  <% else %>
+    <%= render 'videos/bookmarks/bookmark', video: %>
+  <% end %>
+<% end %>

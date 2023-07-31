@@ -6,7 +6,8 @@ module.exports = {
     './app/javascript/**/*.js'
   ],
   plugins: [
-    require("daisyui")
+    require("daisyui"),
+    require('@tailwindcss/line-clamp')
   ],
   daisyui: {
     themes: ["bumblebee"]

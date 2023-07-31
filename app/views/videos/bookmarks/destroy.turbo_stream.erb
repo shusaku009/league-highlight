@@ -1,0 +1,6 @@
+<%= turbo_stream.replace(
+      dom_id(@video, 'bookmark'),
+      partial: 'bookmarks',
+      locals: { video: @video }
+    )
+%>

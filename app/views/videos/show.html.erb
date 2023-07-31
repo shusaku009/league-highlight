@@ -4,12 +4,18 @@
     <iframe class="mb-3 w-full aspect-video" src="https://www.youtube.com/embed/<%= @video.video_id %>" frameborder="1"></iframe>
     <div class="flex">
       <% if logged_in? %>
-        <div class="pl-1 pr-4 text-xl md:text-4xl text-red-400">
-          <%= render 'videos/likes/likes', video: @video %>
+        <div class="flex pl-1 text-xl md:text-2xl">
+          <div class="text-primary pr-4">
+            <%= render 'videos/bookmarks/bookmarks', video: @video %>
+          </div>
+          <div class="text-red-400">
+            <%= render 'videos/likes/likes', video: @video %>
+          </div>
         </div>
       <% end %>
     </div>
   </div>
+  <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-400">
   <div class="comment-form">
     <%= render 'videos/comments/form', video: @video, comment: @comment %>
   </div>
