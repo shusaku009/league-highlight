@@ -1,7 +1,6 @@
 <%= form_with(model: [video, comment], id: dom_id(comment, 'form'), class: 'w-full py-1') do |f| %>
   <%= render 'shared/error_messages', object: comment %>
   <!-- comment form -->
-  <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-400">
   <div class="w-full bg-white rounded-lg px-3">
     <div class="flex flex-wrap -mx-3 my-1">
       <div class="w-full md:w-full px-3 my-1 mt-2">
