@@ -1,3 +1,9 @@
+<%= search_form_for @q do |f| %>
+  <%= f.label :title_cont, 'チーム名' %>
+  <%= f.select :title_cont, @teams.map { |t| [t.name, t.name] }, include_blank: '全て' %>
+  <%= f.submit '検索' %>
+<% end %>
+
 <div class="p-4 md:p-8 lg:p-12 z-0">
   <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     <% @videos.each do |video| %>

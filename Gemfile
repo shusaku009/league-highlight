@@ -57,6 +57,9 @@ gem 'sorcery'
 # 国際化
 gem 'rails-i18n'
 
+# 検索機能
+gem 'ransack'
+
 # youtube api
 gem 'google-api-client'
 
