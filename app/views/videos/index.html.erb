@@ -6,10 +6,10 @@
           <div class="px-2">
             <%= f.label :title_cont, 'チームを選択', class: 'font-semibold' %>
           </div>
-          <div class="pr-2">
+          <div id="team_list" class="pr-2">
             <%= f.select :title_cont, @teams.map { |t| [t.name, t.name] }, include_blank: '全て' %>
           </div>
-          <div class="">
+          <div id="search">
             <%= f.submit '検索', class: 'btn btn-primary btn-xs md:btn-sm' %>
           </div>
         </div>
