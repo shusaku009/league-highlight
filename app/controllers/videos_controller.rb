@@ -1,6 +1,8 @@
 class VideosController < ApplicationController
   def index
-    @pagy, @videos = pagy(Video.all, items: 24)
+    @teams = Team.all
+    @q = Video.ransack(params[:q])
+    @pagy, @videos = pagy(@q.result(distinct: true), items: 24)
   end
 
   def show

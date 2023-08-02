@@ -61,4 +61,12 @@ class Video < ApplicationRecord
     end
   end
   # rubocop:enable Metrics/MethodLength
+
+  def self.ransackable_associations(_auth_object = nil)
+    %w[comments team]
+  end
+
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[created_at id published_at team_id thumbnail_url title updated_at video_id]
+  end
 end
