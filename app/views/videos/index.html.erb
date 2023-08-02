@@ -1,10 +1,21 @@
-<%= search_form_for @q do |f| %>
-  <%= f.label :title_cont, 'チーム名' %>
-  <%= f.select :title_cont, @teams.map { |t| [t.name, t.name] }, include_blank: '全て' %>
-  <%= f.submit '検索' %>
-<% end %>
-
 <div class="p-4 md:p-8 lg:p-12 z-0">
+  <div class="flex justify-center pb-8">
+    <%# <select class="select select-bordered w-full max-w-xs"> %>
+      <%= search_form_for @q do |f| %>
+        <div class="flex items-center input input-bordered input-xs px-0 md:input-sm md:px-0">
+          <div class="px-2">
+            <%= f.label :title_cont, 'チームを選択', class: 'font-semibold' %>
+          </div>
+          <div class="pr-2">
+            <%= f.select :title_cont, @teams.map { |t| [t.name, t.name] }, include_blank: '全て' %>
+          </div>
+          <div class="">
+            <%= f.submit '検索', class: 'btn btn-primary btn-xs md:btn-sm' %>
+          </div>
+        </div>
+      <% end %>
+    <%# </select> %>
+  </div>
   <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     <% @videos.each do |video| %>
       <div class="bg-white overflow-hidden rounded-lg">
