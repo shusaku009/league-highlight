@@ -19,6 +19,8 @@
 #
 class User < ApplicationRecord
   authenticates_with_sorcery!
+
+  mount_uploader :avatar, AvatarUploader
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :like_videos, through: :likes, source: :video
