@@ -43,3 +43,8 @@ ja:
         one: "全1件表示"
         other: "全%{count}件中%{from}-%{to}件表示"
       multiple_pages: "全%{count}件中%{from}-%{to}件表示（全%{pages}ページ）"
+
+  profiles:
+    update:
+      success: 'プロフィールの編集が完了しました'
+      error: 'プロフィールの編集に失敗しました'
