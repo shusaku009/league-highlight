@@ -1,6 +1,6 @@
 <div id="header" class="fixed h-16 top-0 navbar bg-yellow-400 drop-shadow-md md:drop-shadow-xl px-4 z-10">
   <div class="flex-1">
-    <a class="btn btn-ghost normal-case text-base md:text-xl mr-3">League Highlight</a>
+    <%= link_to 'League Highlight', root_path, class: "btn btn-ghost normal-case text-base md:text-xl mr-3" %>
   </div>
   <div class="flex-none">
     <button class="btn btn-sm md:btn mr-4">
@@ -20,17 +20,12 @@
       <div id="header-avatar-dropdown" class="dropdown dropdown-end">
         <label tabindex="0" class="btn btn-ghost btn-circle avatar">
           <div class="w-10 rounded-full">
-            <%= image_tag 'avatar' %>
+            <%= image_tag current_user.avatar_url %>
           </div>
         </label>
         <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
-          <li>
-            <a class="justify-between">
-              Profile
-              <span class="badge">New</span>
-            </a>
-          </li>
-          <li><a>Settings</a></li>
+          <li><%= link_to 'マイページ', profile_path %></li>
+          <li><%= link_to 'プロフィール編集', edit_profile_path %></li>
           <li>
             <%= link_to 'ログアウト',
                         logout_path,
