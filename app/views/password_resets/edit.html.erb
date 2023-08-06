@@ -1,0 +1,28 @@
+<% content_for(:title, "パスワードリセット") %>
+<div class="bg-white font-family-karla p-6">
+  <div class="w-full flex flex-col">
+    <div class="flex flex-col justify-center my-auto pt-8 md:pt-0 px-8 md:px-24 lg:px-32">
+      <h1 class="text-center text-2xl">パスワードリセット</h1>
+      <div class="flex flex-col justify-center pt-3 md:pt-8">
+        <%= form_with model: @user, url: password_reset_path(@token), local: true do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+          <div class="flex flex-col pt-4">
+            <%= f.label :email, class: 'form-label text-lg' %>
+            <%= f.email_field :email, class: 'form-control shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline' %>
+          </div>
+          <div class="flex flex-col pt-4">
+            <%= f.label :password, class: 'form-label text-lg' %>
+            <%= f.password_field :password, class: 'form-control shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline' %>
+          </div>
+          <div class="flex flex-col pt-4">
+            <%= f.label :password_confirmation, class: 'form-label text-lg' %>
+            <%= f.password_field :password_confirmation, class: 'form-control shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline' %>
+          </div>
+          <div class="pt-4">
+            <%= f.submit '更新する', class: 'btn rounded' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
