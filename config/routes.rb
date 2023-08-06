@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   post '/login', to: 'user_sessions#create'
   delete '/logout', to: 'user_sessions#destroy'
 
-  resource :profile, only: %i[show edit update]
+  resource :profile, only: %i[show edit update] do
+    collection do
+      get :bookmarks
+    end
+  end
   resources :videos do
     resources :comments, module: :videos
     resource :like, only: %i[create destroy], module: :videos

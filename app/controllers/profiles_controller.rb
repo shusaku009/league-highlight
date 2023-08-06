@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_action :set_user, only: %i[edit update]
+  before_action :set_user, only: %i[edit update bookmarks]
 
   def show; end
 
@@ -12,6 +12,11 @@ class ProfilesController < ApplicationController
       flash.now['error'] = t('.error', item: User.model_name.human)
       render :edit
     end
+  end
+
+  def bookmarks
+    bookmarks = Bookmark.where(user_id: @user.id).pluck(:video_id)
+    @pagy, @bookmark_videos = pagy(Video.where(id: bookmarks), items: 24)
   end
 
   private
