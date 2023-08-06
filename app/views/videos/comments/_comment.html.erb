@@ -3,7 +3,7 @@
     <div class="w-full p-5 flex justify-between">
       <div class="flex">
         <div>
-          <%= image_tag current_user.avatar_url, class: 'rounded-full w-10 h-10' %>
+          <%= image_tag comment.user.avatar_url, class: 'rounded-full w-10 h-10' %>
         </div>
         <div class="pl-4">
           <div class="font-semibold"><%= comment.user.user_name %></div>
