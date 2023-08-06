@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_30_144721) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_03_135035) do
   create_table "bookmarks", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "video_id", null: false
@@ -55,6 +55,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_30_144721) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "role", default: 0, null: false
+    t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["user_name"], name: "index_users_on_user_name", unique: true
   end

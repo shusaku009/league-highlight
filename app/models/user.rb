@@ -3,6 +3,7 @@
 # Table name: users
 #
 #  id               :bigint           not null, primary key
+#  avatar           :string(255)
 #  crypted_password :string(255)
 #  email            :string(255)      not null
 #  role             :integer          default("general"), not null
@@ -18,6 +19,8 @@
 #
 class User < ApplicationRecord
   authenticates_with_sorcery!
+
+  mount_uploader :avatar, AvatarUploader
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :like_videos, through: :likes, source: :video
