@@ -24,6 +24,8 @@ require 'google/apis/youtube_v3'
 class Video < ApplicationRecord
   belongs_to :team
   has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :bookmarks, dependent: :destroy
 
   validates :title, presence: true
   validates :video_id, presence: true
