@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
+
   get '/health_check', to: 'health_checks#show'
   root to: 'videos#index'
   get '/signup', to: 'users#new'
