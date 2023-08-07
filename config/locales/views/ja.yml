@@ -49,7 +49,7 @@ ja:
       success: 'プロフィールの編集が完了しました'
       error: 'プロフィールの編集に失敗しました'
 
-  password_resets_controller:
+  password_resets:
     create:
       success: 'メールを送信しました'
     update:
