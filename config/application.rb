@@ -35,7 +35,9 @@ module LeagueHighlight
     config.generators.system_tests = nil
 
     config.generators do |g|
+      g.skip_routes true
       g.helper false
+      g.request_specs false
     end
     
     config.time_zone = 'Tokyo'
