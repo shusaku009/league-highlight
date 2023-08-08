@@ -14,12 +14,12 @@
               <%= f.label :password, User.human_attribute_name(:password), class: 'form-label text-lg' %>
               <%= f.password_field :password, class: 'form-control shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline' %>
             </div>
-            <%= f.submit 'ログイン', class: 'w-full bg-yellow-400 text-white font-bold text-lg hover:bg-yellow-600 p-2 mt-8 rounded-md', id: 'rspec' %>
+            <%= f.submit 'ログイン', class: 'w-full bg-yellow-400 text-white font-bold text-lg hover:bg-yellow-600 p-2 mt-8 rounded-md', id: 'test_login_button' %>
           <% end %>
         </div>
         <div class="flex flex-col py-5">
           <p class="pb-2 font-medium text-center">ゲストユーザーとしてログインする</p>
-          <p><%= link_to 'ゲストログイン', guest_login_path, data: { 'turbo-method': :post }, class: 'w-full btn btn-success text-white' %></p>
+          <p><%= link_to 'ゲストログイン', guest_login_path, data: { 'turbo-method': :post }, class: 'w-full btn btn-success text-white', id: 'guest_login_button' %></p>
         </div>
         <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-400">
         <div class="text-center pt-12 pb-12">

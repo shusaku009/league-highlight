@@ -4,7 +4,7 @@ module LoginMacros
     within '#login-form' do
       fill_in 'メールアドレス', with: user.email
       fill_in 'パスワード', with: '12345678'
-      find('#rspec').click
+      find('#test_login_button').click
     end
 
     expect(page).to have_content 'ログインしました'
