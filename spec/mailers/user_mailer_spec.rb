@@ -13,7 +13,7 @@ RSpec.describe UserMailer, type: :mailer do
       it "renders the headers" do
         expect(mail.subject).to eq('パスワードリセット')
         expect(mail.to).to eq([user.email])
-        expect(mail.from).to eq(["from@example.com"])
+        expect(mail.from).to eq(["league_highlight@example.com"])
       end
       
       it "メール本文が正しい" do
