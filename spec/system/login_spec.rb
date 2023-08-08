@@ -9,7 +9,7 @@ RSpec.describe "ログイン", type: :system do
         within '#login-form' do
           fill_in 'メールアドレス', with: 'wrong@example.com'
           fill_in 'パスワード', with: '12345678'
-          find('#rspec').click
+          find('#test_login_button').click
         end
         expect(page).to have_content 'ログインに失敗しました'
       end
@@ -21,7 +21,7 @@ RSpec.describe "ログイン", type: :system do
         within '#login-form' do
           fill_in 'メールアドレス', with: user.email
           fill_in 'パスワード', with: '12345678'
-          find('#rspec').click
+          find('#test_login_button').click
         end
         expect(page).to have_content 'ログインしました'
       end
@@ -65,6 +65,23 @@ RSpec.describe "ログイン", type: :system do
           expect(page).not_to have_css '#header-avatar-dropdown'
         end
       end
+    end
+  end
+
+  describe 'ゲストログイン' do
+    it 'ログインができる' do
+      visit login_path
+      find('#guest_login_button').click
+      expect(page).to have_content 'ゲストとしてログインしました'
+    end
+
+    it 'ログアウトができる' do
+      visit login_path
+      find('#guest_login_button').click
+      expect(page).to have_content 'ログインしました'
+      find("#header-avatar-dropdown").click
+      accept_confirm { click_on 'ログアウト' }
+      expect(page).to have_content 'ログアウトしました'
     end
   end
 end
