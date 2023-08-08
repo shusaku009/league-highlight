@@ -48,3 +48,14 @@ ja:
     update:
       success: 'プロフィールの編集が完了しました'
       error: 'プロフィールの編集に失敗しました'
+
+  password_resets:
+    create:
+      success: 'メールを送信しました'
+    update:
+      success: 'パスワードを変更できました'
+      error: 'パスワードを変更できませんでした'
+
+  user_mailer:
+    reset_password_email:
+      subject: "パスワードリセット"

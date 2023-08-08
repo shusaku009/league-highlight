@@ -72,6 +72,9 @@ gem 'pagy'
 # アバター画像アップロード
 gem 'carrierwave', '~> 3.0'
 
+# 定数
+gem 'config'
+
 group :development, :test do
   gem 'annotate'
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -86,6 +89,8 @@ group :development do
   gem 'rubocop'
   gem 'rubocop-rails', require: false
   gem 'web-console'
+  # メール
+  gem 'letter_opener_web'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem 'rack-mini-profiler'
