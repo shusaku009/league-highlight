@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   delete '/logout', to: 'user_sessions#destroy'
   post '/guest_login', to: 'user_sessions#guest_login'
 
+  get '/about', to: 'static_pages#about'
+  get '/privacy', to: 'static_pages#privacy'
+  get '/term', to: 'static_pages#term'
+
   resources :password_resets, only: %i[new create edit update]
   resources :teams
 
