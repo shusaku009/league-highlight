@@ -10,7 +10,8 @@ RSpec.describe "Profiles", type: :system do
     it 'アカウントを更新できること' do
       find("#header-avatar-dropdown").click
       click_on 'プロフィール編集'
-      expect(current_path).to eq '/'
+      sleep 1
+      expect(current_path).to eq '/profile/edit'
       fill_in 'ユーザー名', with: 'testuser_update'
       fill_in 'メールアドレス', with: 'test_update@example.com'
       attach_file 'user[avatar]', "#{Rails.root}/spec/system/fixtures/avatar.jpg"
