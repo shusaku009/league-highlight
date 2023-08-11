@@ -1,14 +1,4 @@
 Rails.application.routes.draw do
-  # namespace :admin do
-  #     resources :bookmarks
-  #     resources :comments
-  #     resources :likes
-  #     resources :teams
-  #     resources :users
-  #     resources :videos
-
-  #     root to: "bookmarks#index"
-  #   end
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 
   get '/health_check', to: 'health_checks#show'

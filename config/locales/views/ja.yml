@@ -64,3 +64,11 @@ ja:
   user_mailer:
     reset_password_email:
       subject: "パスワードリセット"
+
+  admin:
+    user_sessions:
+      create:
+        success: 'ログインしました'
+        error: 'ログインに失敗しました'
+      destroy:
+        success: 'ログアウトしました'

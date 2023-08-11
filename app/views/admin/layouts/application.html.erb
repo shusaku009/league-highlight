@@ -12,9 +12,9 @@
 
   <body>
     <%= render 'admin/shared/header' %>
+    <%= render 'shared/flash_messages' %>
     <div class="flex">
       <%= render 'admin/shared/sidebar' %>
-      <%= render 'shared/flash_messages' %>
       <%= yield %>
     </div>
   </body>
