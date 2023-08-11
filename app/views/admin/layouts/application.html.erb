@@ -11,11 +11,11 @@
   </head>
 
   <body>
-    <div class="pb-16">
-      <%= render 'admin/shared/header' %>
+    <%= render 'admin/shared/header' %>
+    <div class="flex">
       <%= render 'admin/shared/sidebar' %>
+      <%= render 'shared/flash_messages' %>
+      <%= yield %>
     </div>
-    <%= render 'shared/flash_messages' %>
-    <%= yield %>
   </body>
 </html>
