@@ -11,6 +11,11 @@ ja:
     privacy_policy: "プライバシーポリシー"
     contact: "お問い合わせ"
 
+    message:
+      not_authorized: '権限がありません'
+      require_login: 'ログインしてください'
+
+
   application:
     require_login: "ログインが必要です"
 

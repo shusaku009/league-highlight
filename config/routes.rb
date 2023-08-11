@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  # namespace :admin do
+  #     resources :bookmarks
+  #     resources :comments
+  #     resources :likes
+  #     resources :teams
+  #     resources :users
+  #     resources :videos
+
+  #     root to: "bookmarks#index"
+  #   end
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 
   get '/health_check', to: 'health_checks#show'
@@ -27,5 +37,13 @@ Rails.application.routes.draw do
     resources :comments, module: :videos
     resource :like, only: %i[create destroy], module: :videos
     resource :bookmark, only: %i[create destroy], module: :videos
+  end
+
+  # 管理者用
+  namespace :admin do
+    root to: 'dashboards#index'
+    get 'login', to: 'user_sessions#new'
+    post 'login', to: 'user_sessions#create'
+    delete 'logout', to: 'user_sessions#destroy'
   end
 end
