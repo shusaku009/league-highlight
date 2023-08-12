@@ -24,4 +24,12 @@ class Comment < ApplicationRecord
   belongs_to :video
 
   validates :body, presence: true, length: { maximum: 1000 }
+
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[id body created_at updated_at]
+  end
+
+  def self.ransackable_associations(_auth_object = nil)
+    %w[user video]
+  end
 end

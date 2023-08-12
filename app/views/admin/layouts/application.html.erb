@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html data-theme="bumblebee">
+  <head>
+    <title>LeagueHighlight</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", 'data-turbo-track': "reload" %>
+    <%= javascript_include_tag "application", 'data-turbo-track': "reload", defer: true %>
+  </head>
+
+  <body>
+    <%= render 'admin/shared/header' %>
+    <%= render 'shared/flash_messages' %>
+    <div class="flex bg-gray-800">
+      <%= render 'admin/shared/sidebar' %>
+      <%= yield %>
+    </div>
+  </body>
+</html>

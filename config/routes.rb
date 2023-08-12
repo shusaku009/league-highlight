@@ -28,4 +28,16 @@ Rails.application.routes.draw do
     resource :like, only: %i[create destroy], module: :videos
     resource :bookmark, only: %i[create destroy], module: :videos
   end
+
+  # 管理者用
+  namespace :admin do
+    root to: 'dashboards#index'
+    get 'login', to: 'user_sessions#new'
+    post 'login', to: 'user_sessions#create'
+    delete 'logout', to: 'user_sessions#destroy'
+    resources :users, only: %i[index destroy]
+    resources :teams
+    resources :videos, only: %i[index destroy]
+    resources :comments, only: %i[index destroy]
+  end
 end

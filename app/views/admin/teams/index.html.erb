@@ -1,0 +1,44 @@
+<div class="flex-1 overflow-x-auto">
+  <div class="bg-gray-800">
+    <div class="flex justify-between">
+      <%= link_to '新規登録', new_admin_team_path, class: 'm-5 btn btn-success' %>
+      <%= link_to 'チーム一覧', admin_teams_path, class: 'm-5 btn' %>
+    </div>
+    <div class="pb-4">
+      <%= render 'admin/shared/team_search', q: @q, url: admin_teams_path %>
+    </div>
+  </div>
+  <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <tr>
+              <th scope="col" class="px-6 py-3">
+                チーム名
+              </th>
+              <th scope="col" class="px-6 py-3">
+                編集
+              </th>
+              <th scope="col" class="px-6 py-3">
+                削除
+              </th>
+          </tr>
+      </thead>
+      <tbody>
+        <% @teams.each do |team| %>
+          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+              <%= team.name %>
+            </th>
+            <td class="px-6 py-4">
+              <%= link_to '編集', edit_admin_team_path(team), class: 'btn btn-primary m-2' %>
+            </td>
+            <td class="px-6 py-4">
+              <%= link_to '削除', admin_team_path(team), data: { turbo_method: :delete, turbo_confirm: "ユーザー「#{team.name}」を削除します。よろしいですか？" }, class: 'btn btn-error' %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+  </table>
+  <div class="flex justify-center my-6">
+    <%== pagy_nav(@pagy) %>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="p-10">
+  <h1 class="text-xl text-white">チームの編集</h1>
+  <%= link_to '一覧', admin_teams_path, class: 'btn btn-primary' %>
+  <%= form_with(model: @team, url: admin_team_path(@team), method: :patch, local: true) do |form| %>
+    <div class="my-3">
+      <%= form.label :name, class: 'text-white block mb-4' %>
+      <%= form.text_field :name, class: 'block mb-4 input input-bordered w-full max-w-xs' %>
+      <%= form.submit class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>
