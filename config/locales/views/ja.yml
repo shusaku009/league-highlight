@@ -65,6 +65,7 @@ ja:
     reset_password_email:
       subject: "パスワードリセット"
 
+  # 管理画面用
   admin:
     user_sessions:
       create:
@@ -72,3 +73,13 @@ ja:
         error: 'ログインに失敗しました'
       destroy:
         success: 'ログアウトしました'
+    
+    teams:
+      new:
+        name: 'チーム名'
+      create:
+        success: 'チームの登録が完了しました'
+        error: 'チームの登録に失敗しました'
+      update:
+        success: 'チームの更新が完了しました'
+        error: 'チームの更新に失敗しました'

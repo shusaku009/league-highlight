@@ -1,29 +1,32 @@
 <div class="flex-1 overflow-x-auto">
+  <div class="bg-gray-800">
+    <%= link_to '新規登録', new_admin_team_path, class: 'm-5 btn btn-success' %>
+  </div>
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th scope="col" class="px-6 py-3">
-                    ユーザー名
+                  チーム名
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    メールアドレス
+                  編集
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    削除
+                  削除
                 </th>
             </tr>
         </thead>
         <tbody>
-          <% @users.each do |user| %>
+          <% @teams.each do |team| %>
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
               <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                <%= user.user_name %>
+                <%= team.name %>
               </th>
               <td class="px-6 py-4">
-                <%= user.email %>
+                <%= link_to '編集', edit_admin_team_path(team), class: 'btn btn-primary m-2' %>
               </td>
               <td class="px-6 py-4">
-                <%= link_to '削除', admin_user_path(user), data: { turbo_method: :delete, turbo_confirm: "ユーザー「#{user.user_name}」を削除します。よろしいですか？" }, class: 'btn btn-error' %>
+                <%= link_to '削除', admin_team_path(team), data: { turbo_method: :delete, turbo_confirm: "ユーザー「#{team.name}」を削除します。よろしいですか？" }, class: 'btn btn-error' %>
               </td>
             </tr>
           <% end %>
