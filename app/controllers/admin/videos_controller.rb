@@ -1,6 +1,7 @@
 class Admin::VideosController < Admin::BaseController
   def index
-    @videos = Video.all
+    @q = Video.ransack(params[:q])
+    @pagy, @videos = pagy(@q.result(distinct: true), items: 24)
   end
 
   def destroy

@@ -1,6 +1,6 @@
 class Admin::UsersController < Admin::BaseController
   def index
-    @users = User.all
+    @pagy, @users = pagy(User.all, items: 24)
   end
 
   def destroy

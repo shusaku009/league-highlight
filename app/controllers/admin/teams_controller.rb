@@ -1,6 +1,7 @@
 class Admin::TeamsController < Admin::BaseController
   def index
-    @teams = Team.all
+    @q = Team.ransack(params[:q])
+    @pagy, @teams = pagy(@q.result(distinct: true), items: 20)
   end
 
   def show
