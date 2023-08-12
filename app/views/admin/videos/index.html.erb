@@ -1,0 +1,30 @@
+<div class="flex-1 overflow-x-auto">
+  <div class="bg-gray-800">
+    <%# 動画を新規登録する機能を実装するまでは一旦保留 %>
+    <%= link_to '新規登録', "#", class: 'm-5 btn btn-success' %>
+  </div>
+  <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <tr>
+        <th scope="col" class="px-6 py-3">
+          動画タイトル
+        </th>
+        <th scope="col" class="px-6 py-3">
+          削除
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @videos.each do |video| %>
+        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            <%= video.title %>
+          </th>
+          <td class="px-6 py-4">
+            <%= link_to '削除', admin_video_path(video), data: { turbo_method: :delete, turbo_confirm: "ユーザー「#{video.title}」を削除します。よろしいですか？" }, class: 'btn btn-error' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
