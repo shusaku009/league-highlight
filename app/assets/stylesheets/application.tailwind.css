@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .pagy-nav.pagination {
-  @apply isolate inline-flex -space-x-px rounded-md shadow-sm;
+  @apply isolate inline-flex flex-wrap -space-x-px rounded-md shadow-sm;
 }
 
 .page.next a {

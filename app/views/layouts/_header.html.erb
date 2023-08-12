@@ -1,18 +1,18 @@
-<div id="header" class="fixed h-16 top-0 navbar bg-yellow-400 drop-shadow-md md:drop-shadow-xl px-4 z-10">
+<div id="header" class="fixed h-16 top-0 navbar bg-yellow-400 drop-shadow-md md:drop-shadow-xl px-2 md:px-4 z-10">
   <div class="flex-1">
-    <%= link_to 'League Highlight', root_path, class: "btn btn-ghost normal-case text-base md:text-xl mr-3" %>
+    <%= link_to 'League Highlight', root_path, class: "btn btn-ghost normal-case text-sm md:text-xl md:mr-3" %>
   </div>
   <div class="flex-none">
-    <button class="btn btn-sm md:btn mr-4">
+    <%= link_to videos_path, class: "md:btn md:btn-sm md:btn mr-2 inline-block" do %>
       <i class="fa-solid fa-magnifying-glass"></i>
-      <%= link_to '動画を探す', videos_path, class: "hidden md:inline-block" %>
-    </button>
+      <span class="hidden md:inline-block">動画を探す</span>
+    <% end %>
   </div>
-  <div class="flex-none gap-2">
+  <div class="flex-none gap-0 md:gap-2">
     <% unless logged_in? %>
-      <ul class="menu menu-horizontal px-1">
-        <li><%= link_to 'ログイン', login_path, class: 'mr-1' %></li>
-        <li><%= link_to '会員登録', signup_path, class: 'mr-1' %></li>
+      <ul class="flex md:px-1">
+        <li><%= link_to 'ログイン', login_path, class: 'flex-1 px-2 text-xs md:mr-1' %></li>
+        <li><%= link_to '会員登録', signup_path, class: 'flex-2 px-2 text-xs md:mr-1' %></li>
       </ul>
     <% end %>
     <% if logged_in? %>
