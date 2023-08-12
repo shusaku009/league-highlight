@@ -92,6 +92,8 @@ group :development do
   gem 'web-console'
   # メール
   gem 'letter_opener_web'
+  # N+1問題確認
+  gem 'bullet'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem 'rack-mini-profiler'
