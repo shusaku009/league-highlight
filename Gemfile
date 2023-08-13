@@ -76,6 +76,9 @@ gem 'carrierwave', '~> 3.0'
 # 定数
 gem 'config'
 
+# 環境変数
+gem 'dotenv-rails'
+
 group :development, :test do
   gem 'annotate'
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
