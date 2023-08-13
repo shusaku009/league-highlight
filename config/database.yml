@@ -53,13 +53,4 @@ production:
   database: league_highlight_production
   username: league_highlight
   password: <%= ENV["LEAGUE_HIGHLIGHT_DATABASE_PASSWORD"] %>
-
-# # CIでYOUTUBE_API_KEY = Rails.application.credentials.google[:youtube_api_key]を呼ばないように追記
-# production:
-#   <<: *default
-#   <% if Rails.application.credentials.database.present? %>
-#   database: league_highlight_production
-#   host: <%= Rails.application.credentials.google[:youtube_api_key] %>
-#   username: league_highlight
-#   password: <%= ENV["LEAGUE_HIGHLIGHT_DATABASE_PASSWORD"] %>
-#   <% end %>
+  url: <%= ENV['DATABASE_URL'] %>

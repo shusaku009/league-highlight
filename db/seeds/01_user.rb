@@ -1,8 +1,8 @@
 User.create(
   user_name: 'admin',
-  email: 'admin@example.com',
-  password: 'password',
-  password_confirmation: 'password',
+  email: ENV['ADMIN_EMAIL'],
+  password: ENV['ADMIN_PASSWORD'],
+  password_confirmation: ENV['ADMIN_PASSWORD'],
   role: 1
 )
 
