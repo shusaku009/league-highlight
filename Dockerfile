@@ -1,5 +1,7 @@
 FROM ruby:3.2.2
 ARG ROOT="/league_highlight"
+# Herokuへデプロイする際にコメントを外す
+# ENV RAILS_ENV=production
 ENV LANG=C.UTF-8
 ENV TZ=Asia/Tokyo
 
