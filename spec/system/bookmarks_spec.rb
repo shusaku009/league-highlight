@@ -16,7 +16,7 @@ RSpec.describe "Bookmarks", type: :system do
           # 非同期処理が完了したことを確認する
           expect(page).to have_selector('.btn-unbookmark')
         end
-        # sleep 0.1
+        sleep 0.1
       }.to change { Bookmark.count }.by(1)
 
       expect {
@@ -25,7 +25,7 @@ RSpec.describe "Bookmarks", type: :system do
           # 非同期処理が完了したことを確認する
           expect(page).to have_selector('.btn-bookmark')
         end
-        # sleep 0.1
+        sleep 0.1
       }.to change { Bookmark.count }.by(-1)
     end
   end
@@ -40,7 +40,7 @@ RSpec.describe "Bookmarks", type: :system do
           # 非同期処理が完了したことを確認する
           expect(page).to have_selector('.btn-unbookmark')
         end
-        # sleep 0.1
+        sleep 0.1
       }.to change { Bookmark.count }.by(1)
 
       expect {
@@ -48,7 +48,7 @@ RSpec.describe "Bookmarks", type: :system do
           find('.btn-unbookmark').click
           expect(page).to have_selector('.btn-bookmark')
         end
-        # sleep 0.1
+        sleep 0.1
       }.to change { Bookmark.count }.by(-1)
     end
   end
