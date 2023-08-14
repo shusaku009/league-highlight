@@ -79,6 +79,9 @@ gem 'config'
 # 環境変数
 gem 'dotenv-rails'
 
+# SEO
+gem 'meta-tags'
+
 group :development, :test do
   gem 'annotate'
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
