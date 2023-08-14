@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get '/term', to: 'static_pages#term'
 
   resources :password_resets, only: %i[new create edit update]
-  resources :teams
+  resources :teams, only: [:index, :show]
 
   resource :profile, only: %i[show edit update] do
     collection do
