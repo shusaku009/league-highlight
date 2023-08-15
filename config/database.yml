@@ -50,7 +50,4 @@ test:
 #
 production:
   <<: *default
-  database: league_highlight_production
-  username: league_highlight
-  password: <%= ENV["LEAGUE_HIGHLIGHT_DATABASE_PASSWORD"] %>
   url: <%= ENV['DATABASE_URL'] %>
