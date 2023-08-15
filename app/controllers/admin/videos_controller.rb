@@ -4,6 +4,10 @@ class Admin::VideosController < Admin::BaseController
     @pagy, @videos = pagy(@q.result(distinct: true), items: 24)
   end
 
+  def new
+    Video.fetch_and_save_videos
+  end
+
   def destroy
     @video = Video.find(params[:id])
     @video.destroy
