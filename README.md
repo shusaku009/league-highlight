@@ -11,7 +11,7 @@ https://www.leaguehighlight.com
 [![Image from Gyazo](https://i.gyazo.com/1e76ed8cf5069baae4f02158a73786ed.png)](https://gyazo.com/1e76ed8cf5069baae4f02158a73786ed)
 
 ## **レスポンシブ対応**
-[![Image from Gyazo](https://i.gyazo.com/ffb9c6189fc8f1b0fedd99b2c68b26b2.gif)](https://gyazo.com/ffb9c6189fc8f1b0fedd99b2c68b26b2)
+[![Image from Gyazo](https://i.gyazo.com/53336735add270a72a205dd2556e0f5d.gif)](https://gyazo.com/53336735add270a72a205dd2556e0f5d)
 
 ## **サービス概要**
 自分が好きなサッカーチームのハイライトをまとめて視聴できるサービスです。
