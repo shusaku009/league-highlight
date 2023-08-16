@@ -46,7 +46,8 @@ class Video < ApplicationRecord
         video_duration: "medium",
         order: 'relevance',
         published_after: after.iso8601,
-        published_before: before.iso8601
+        published_before: before.iso8601,
+        region_code: 'JP'
       }
       response = youtube_service.list_searches(:snippet, **opt)
 
