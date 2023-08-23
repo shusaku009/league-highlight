@@ -43,7 +43,7 @@ https://www.leaguehighlight.com
 ### **YouTube DataAPIの通信について**
 YouTube DataAPIから動画を取得する際には、Search: listメソッドを使って、「チーム名 + ハイライト」という検索キーワードで関連動画を取得。
 また動画情報の更新については週に3回、YouTube APIと通信を行い最新の情報をDBに保存をするように実装。
-gem 'whenever'を使用して、上記の更新を自動で実行します。
+本番環境ではHeroku Schedulerを利用、開発環境では gem 'whenever'を使用して、上記の更新を自動で実行します。
 
 ## **使用技術**
 バックエンド
