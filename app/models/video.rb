@@ -39,7 +39,7 @@ class Video < ApplicationRecord
     Team.find_each do |team|
       # YouTubeの動画検索を行う
       opt = {
-        q: "#{team.name} ハイライト",
+        q: "イングランド サッカー #{team.name} ハイライト プレミアリーグ",
         channel_id: 'UCJ-l-sMQFHogSy8KXRyMIRA',
         type: 'video',
         max_results: 50,
