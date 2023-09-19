@@ -4,11 +4,19 @@ League Highlight
 ## **サービスURL**
 https://www.leaguehighlight.com
 
-## **トップ画面**
-[![Image from Gyazo](https://i.gyazo.com/b06b48b1efaf7dcd9b412d112cb9975a.png)](https://gyazo.com/b06b48b1efaf7dcd9b412d112cb9975a)
-
-## **動画再生画面**
-[![Image from Gyazo](https://i.gyazo.com/1e76ed8cf5069baae4f02158a73786ed.png)](https://gyazo.com/1e76ed8cf5069baae4f02158a73786ed)
+## **基本機能**
+<table>
+  <tr>
+     <th style="text-align: center">チーム名で検索</th>
+    <th style="text-align: center">動画のいいね・お気に入り</th>
+    <th style="text-align: center">お気に入り動画一覧</th>
+  </tr>
+  <tr>
+    <td><img src="https://i.gyazo.com/c9b9dc4dbea67fe8e86050d48d4d398a.gif" alt="チーム名で検索" />ハイライトを見たいチーム名を選択。</td>
+    <td><img src="https://i.gyazo.com/5958c5a2817ffff69144478bc2b73dca.gif" alt="動画のいいね・お気に入り" />動画をいいねやお気に入りに登録。</td>
+    <td><img src="https://i.gyazo.com/779ea3b678d422f0fdb48546a663e9f8.gif" alt="お気に入り動画一覧" />お気に入りの動画を一覧で表示。</td>
+  </tr>
+</table>
 
 ## **サービス概要**
 自分が好きなサッカーチームのハイライトをまとめて視聴できるサービスです。
@@ -94,7 +102,7 @@ CI
 好きなチームのハイライトをまとめて視聴できるような環境があれば、もっと快適に楽しむことができるのではないかと考え、このサービスを開発しようと思いました。
 
 ## 画面遷移図
-https://www.figma.com/file/CvWxmTqXPFfmhnKmZbOves/League-Highlight-%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?type=design&node-id=0%3A1&mode=design&t=IiLA9bB7JTn0b3Ba-1
+[![Image from Gyazo](https://i.gyazo.com/70d161db949192b41c7af00b1cc2b714.png)](https://gyazo.com/70d161db949192b41c7af00b1cc2b714)
 
 ## ER図
 [![Image from Gyazo](https://i.gyazo.com/957275be81a4b72d33347a8319bda6df.png)](https://gyazo.com/957275be81a4b72d33347a8319bda6df)
