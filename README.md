@@ -59,7 +59,7 @@ YouTube DataAPIから動画を取得する際には、Search: listメソッド�
 - Ruby on Rails 7.0.4
 
 フロントエンド
-- JavaScript
+- Hotwire
 - Tailwind CSS
 - daisyUI
 
